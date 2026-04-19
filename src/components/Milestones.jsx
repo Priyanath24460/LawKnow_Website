@@ -1,5 +1,6 @@
-import { CheckSquare } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { useState, useEffect, useRef } from 'react'
+import { CheckSquare, ChevronDown } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 import SectionWrapper from './SectionWrapper'
 
 const milestones = [
@@ -99,6 +100,20 @@ const itemVariants = {
 }
 
 export default function Milestones() {
+  const [selectedMilestone, setSelectedMilestone] = useState(milestones[0])
+  const [isOpen, setIsOpen] = useState(false)
+  const dropdownRef = useRef(null)
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
+
   return (
     <SectionWrapper id="milestones" bg="bg-white">
       {/* ── Header ── */}
@@ -111,58 +126,106 @@ export default function Milestones() {
         </p>
       </div>
 
-      {/* ── Timeline ── */}
-      <div className="relative max-w-3xl mx-auto md:mx-0">
-        {/* Vertical connector line */}
-        <div className="absolute left-[23px] top-8 bottom-8 w-1 bg-gradient-to-b from-amber-400 via-amber-300 to-orange-500 rounded-full opacity-30 shadow-[0_0_10px_rgba(245,158,11,0.5)]" />
-
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="space-y-6"
+      {/* ── Dropdown Selector (Required) ── */}
+      <div className="max-w-xl mx-auto mb-16 relative" ref={dropdownRef}>
+        <label className="block text-center text-sm font-bold text-amber-700 uppercase tracking-widest mb-4">
+          Select Assessment
+        </label>
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="w-full bg-white border-2 border-amber-100 rounded-2xl px-6 py-4 flex items-center justify-between shadow-sm hover:border-amber-400 transition-all duration-300 group"
         >
-          {milestones.map((ms) => (
-            <motion.div key={ms.num} variants={itemVariants} className="relative flex items-start gap-6 md:gap-8 group">
+          <div className="flex items-center gap-4">
+            <span className="w-8 h-8 rounded-full bg-amber-500 text-white font-bold flex items-center justify-center text-sm">
+              {selectedMilestone.num}
+            </span>
+            <span className="font-bold text-gray-900 text-lg group-hover:text-amber-600">
+              {selectedMilestone.title}
+            </span>
+          </div>
+          <ChevronDown className={`text-amber-500 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} />
+        </button>
 
-              {/* Number circle */}
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-amber-400 to-orange-500 text-white font-bold text-lg flex items-center justify-center shadow-[0_0_20px_rgba(245,158,11,0.3)] z-10 mt-1 ring-4 ring-white transition-transform duration-300 group-hover:scale-110">
-                {ms.num}
-              </div>
-
-              {/* Card */}
-              <div className="flex-1 bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 transition-all duration-300 group-hover:shadow-[0_10px_30px_rgba(245,158,11,0.08)] group-hover:border-amber-200/50">
-                <div className="flex flex-col md:flex-row md:items-center justify-between mb-3 gap-2">
-                  <h3 className="font-bold text-gray-900 text-xl leading-tight group-hover:text-amber-600 transition-colors duration-300">{ms.title}</h3>
-                  <span className="inline-block bg-amber-50 text-amber-600 text-xs font-bold px-3 py-1 rounded-full whitespace-nowrap self-start md:self-auto border border-amber-100">
-                    {ms.date}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 10 }}
+              className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-xl border border-gray-100 z-50 overflow-hidden"
+            >
+              {milestones.map((ms) => (
+                <button
+                  key={ms.num}
+                  onClick={() => {
+                    setSelectedMilestone(ms)
+                    setIsOpen(false)
+                  }}
+                  className={`w-full text-left px-6 py-4 flex items-center gap-4 hover:bg-amber-50 transition-colors ${
+                    selectedMilestone.num === ms.num ? 'bg-amber-50/50' : ''
+                  }`}
+                >
+                  <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
+                    selectedMilestone.num === ms.num ? 'bg-amber-500 text-white' : 'bg-gray-100 text-gray-500'
+                  }`}>
+                    {ms.num}
                   </span>
-                </div>
-                
-                <p className="text-gray-500 text-base leading-relaxed mb-6">{ms.description}</p>
-
-                {/* Progress bar + marks */}
-                <div className="flex items-center gap-4">
-                  <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden shadow-inner">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${ms.progress}%` }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1.5, delay: 0.2, ease: "easeOut" }}
-                      className="h-full bg-gradient-to-r from-amber-400 to-orange-500 rounded-full relative"
-                    >
-                      <div className="absolute inset-0 bg-white/20" style={{ backgroundImage: 'linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent)', backgroundSize: '1rem 1rem' }}></div>
-                    </motion.div>
-                  </div>
-                  <span className="text-sm font-bold text-gray-400 whitespace-nowrap flex-shrink-0 w-20 text-right">
-                    {ms.marksLabel}
+                  <span className={`font-semibold ${selectedMilestone.num === ms.num ? 'text-amber-700' : 'text-gray-700'}`}>
+                    {ms.title}
                   </span>
-                </div>
-              </div>
-
+                </button>
+              ))}
             </motion.div>
-          ))}
+          )}
+        </AnimatePresence>
+      </div>
+
+      {/* ── Selected Milestone Detail ── */}
+      <div className="max-w-4xl mx-auto">
+        <motion.div
+          key={selectedMilestone.num}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.3 }}
+          className="bg-gradient-to-br from-white to-amber-50/30 rounded-3xl border border-amber-100 p-8 md:p-12 shadow-sm relative overflow-hidden group"
+        >
+          <div className="absolute top-0 right-0 w-64 h-64 bg-amber-200/20 rounded-full -mr-32 -mt-32 blur-3xl" />
+          
+          <div className="relative z-10">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
+              <div>
+                <span className="inline-block bg-amber-100 text-amber-700 text-xs font-bold px-3 py-1 rounded-full mb-3 uppercase tracking-wider">
+                  Assessment {selectedMilestone.num}
+                </span>
+                <h3 className="text-3xl font-bold text-gray-900 font-playfair">{selectedMilestone.title}</h3>
+              </div>
+              <div className="flex flex-col items-end">
+                <span className="text-2xl font-bold text-amber-600">{selectedMilestone.marksLabel}</span>
+                <span className="text-gray-500 font-medium">{selectedMilestone.date}</span>
+              </div>
+            </div>
+
+            <p className="text-gray-600 text-lg leading-relaxed mb-10 max-w-3xl">
+              {selectedMilestone.description}
+            </p>
+
+            <div className="space-y-4">
+              <div className="flex items-center justify-between text-sm font-bold">
+                <span className="text-gray-500">Completion Status</span>
+                <span className="text-amber-600">{selectedMilestone.progress}%</span>
+              </div>
+              <div className="h-3 bg-gray-100 rounded-full overflow-hidden shadow-inner">
+                <motion.div
+                  initial={{ width: 0 }}
+                  animate={{ width: `${selectedMilestone.progress}%` }}
+                  transition={{ duration: 1, ease: "easeOut" }}
+                  className="h-full bg-gradient-to-r from-amber-400 to-orange-500 rounded-full relative"
+                >
+                  <div className="absolute inset-0 bg-white/20" style={{ backgroundImage: 'linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent)', backgroundSize: '1rem 1rem' }}></div>
+                </motion.div>
+              </div>
+            </div>
+          </div>
         </motion.div>
       </div>
     </SectionWrapper>

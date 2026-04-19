@@ -1,36 +1,48 @@
-import { Users } from 'lucide-react'
+import { Users, Mail } from 'lucide-react'
 import { motion } from 'framer-motion'
 import SectionWrapper from './SectionWrapper'
 
 const team = [
   {
     name: 'Dr. Samantha Perera', role: 'Supervisor', affiliation: 'SLIIT – Faculty of Computing',
+    email: 'samantha.p@sliit.lk',
     bio: 'Expert in Artificial Intelligence and Legal Informatics with 15+ years of academic research experience.',
+    achievements: 'Best Researcher Award 2023',
     avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Samantha&backgroundColor=b6e3f4',
   },
   {
     name: 'Prof. Kavitha Nair', role: 'Co-Supervisor', affiliation: 'SLIIT – Faculty of Computing',
+    email: 'kavitha.n@sliit.lk',
     bio: 'Natural Language Processing researcher specializing in multilingual systems for South Asian languages.',
+    achievements: 'IEEE Fellow, Senior Member',
     avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Kavitha&backgroundColor=d1d4f9',
   },
   {
     name: 'Ashan Wickramasinghe', role: 'Team Leader', affiliation: 'IT20345678',
+    email: 'ashan.w@sliit.lk',
     bio: 'Full-stack developer and AI researcher. Leads system architecture and model development.',
+    achievements: 'Dean\'s List, Hackathon Winner',
     avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Ashan&backgroundColor=c0aede',
   },
   {
     name: 'Nimasha Fernando', role: 'Team Member', affiliation: 'IT20345679',
+    email: 'nimasha.f@sliit.lk',
     bio: 'Frontend engineer specializing in React. Responsible for UI/UX design and implementation.',
+    achievements: 'UI/UX Design Specialist Cert.',
     avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Nimasha&backgroundColor=b6e3f4',
   },
   {
     name: 'Dilshan Rajapaksa', role: 'Team Member', affiliation: 'IT20345680',
+    email: 'dilshan.r@sliit.lk',
     bio: 'Backend developer and DevOps specialist handling API development and cloud infrastructure.',
+    achievements: 'AWS Certified Developer',
     avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Dilshan&backgroundColor=ffd5dc',
   },
   {
     name: 'Hasini Mendis', role: 'Team Member', affiliation: 'IT20345681',
+    email: 'hasini.m@sliit.lk',
     bio: 'ML engineer focused on NLP model training, evaluation, and multilingual pipeline integration.',
+    achievements: 'Kaggle Competition Winner',
     avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Hasini&backgroundColor=c0aede',
   },
 ]
@@ -122,9 +134,25 @@ function TeamCard({ member }) {
       
       <div className="p-6 flex-1 flex flex-col relative z-10">
         <h3 className="font-bold text-gray-900 text-lg mb-1">{member.name}</h3>
-        <p className="text-amber-600 text-sm font-semibold mb-2">{member.role}</p>
-        <p className="text-gray-400 text-xs font-medium uppercase tracking-wider mb-4">{member.affiliation}</p>
-        <p className="text-gray-500 text-sm leading-relaxed mt-auto">{member.bio}</p>
+        <p className="text-amber-600 text-sm font-semibold mb-1">{member.role}</p>
+        <p className="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-3">{member.affiliation}</p>
+        
+        <div className="flex flex-col gap-3 mb-4">
+          <p className="text-gray-500 text-sm leading-relaxed">{member.bio}</p>
+          <div className="flex flex-wrap justify-center gap-1.5">
+            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-50 text-amber-700 border border-amber-100">
+              {member.achievements}
+            </span>
+          </div>
+        </div>
+
+        <a 
+          href={`mailto:${member.email}`}
+          className="mt-auto text-xs font-medium text-gray-400 hover:text-amber-600 transition-colors flex items-center justify-center gap-1.5"
+        >
+          <Mail size={12} />
+          {member.email}
+        </a>
       </div>
     </div>
   )

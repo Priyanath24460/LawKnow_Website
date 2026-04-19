@@ -3,25 +3,25 @@ import SectionWrapper from './SectionWrapper'
 
 const presentations = [
   {
-    title: 'Project Proposal',
+    title: 'Proposal Presentation',
     date: '2024/07/15',
     type: 'Group',
     link: '#',
   },
   {
-    title: 'Progress Review I',
+    title: 'Progress Presentation-1',
     date: '2024/12/10',
     type: 'Group',
     link: '#',
   },
   {
-    title: 'Progress Review II',
+    title: 'Progress Presentation-2',
     date: '2025/03/20',
     type: 'Group',
     link: '#',
   },
   {
-    title: 'Final Viva',
+    title: 'Final Presentation',
     date: '2025/05/15',
     type: 'Group',
     link: '#',
