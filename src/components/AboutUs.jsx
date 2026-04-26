@@ -38,8 +38,8 @@ const researchTeam = [
     degree: 'Undergraduate',
     institute: 'Sri Lanka Institute of Information Technology',
     photo: pasindiPhoto,
-    linkedin: 'https://www.linkedin.com/in/your-profile',
-    email: '',
+    linkedin: 'http://www.linkedin.com/in/pasindi-arjunie-987110235',
+    email: 'it22369024@my.sliit.lk',
   },
   {
     name: 'Sasun Priyanath',
@@ -47,8 +47,8 @@ const researchTeam = [
     degree: 'Undergraduate',
     institute: 'Sri Lanka Institute of Information Technology',
     photo: sasun,
-    linkedin: 'https://www.linkedin.com/in/your-profile',
-    email: '',
+    linkedin: 'www.linkedin.com/in/sasun-priyanath-998a23306',
+    email: 'it22002938@my.sliit.lk',
   },
   {
     name: 'Kumodi Bogahawatte',
@@ -56,8 +56,8 @@ const researchTeam = [
     degree: 'Undergraduate',
     institute: 'Sri Lanka Institute of Information Technology',
     photo: kumodiPhoto,
-    linkedin: 'https://www.linkedin.com/in/your-profile',
-    email: '',
+    linkedin: 'https://www.linkedin.com/in/kumodibogahawatte/',
+    email: 'it22053282@my.sliit.lk',
   },
   {
     name: 'Chanugi Wijerathna',
@@ -65,8 +65,8 @@ const researchTeam = [
     degree: 'Undergraduate',
     institute: 'Sri Lanka Institute of Information Technology',
     photo: chanugi,
-    linkedin: 'https://www.linkedin.com/in/your-profile',
-    email: '',
+    linkedin: 'http://www.linkedin.com/in/chanugi-wijerathna02',
+    email: 'it22358134@my.sliit.lk',
   },
 ]
 
@@ -154,7 +154,7 @@ function SupervisorCard({ member }) {
         <h3 className="text-lg font-bold text-gray-900 leading-snug">{member.name}</h3>
         <p className="mt-1 text-xs font-semibold tracking-widest text-gray-500 uppercase">{member.role}</p>
       </div>
-      <div className="grid grid-cols-2 border-t border-b border-gray-200/80 text-sm font-semibold text-blue-600">
+      <div className="grid grid-cols-1 border-t border-b border-gray-200/80 text-sm font-semibold text-blue-600">
         <a
           href={member.scholar}
           target="_blank"
@@ -162,12 +162,6 @@ function SupervisorCard({ member }) {
           className="py-4 text-center hover:bg-blue-50 transition-colors"
         >
           G-SCHOLAR
-        </a>
-        <a
-          href={member.email}
-          className="py-4 text-center hover:bg-blue-50 transition-colors"
-        >
-          G-MAIL
         </a>
       </div>
       <div className="p-5 flex items-start gap-3 text-sm text-gray-600">
@@ -194,8 +188,16 @@ function ResearchTeamCard({ member }) {
       <div className="p-6 text-left">
         <h3 className="text-lg font-bold text-gray-900 leading-snug">{member.name}</h3>
         <p className="mt-1 text-xs font-semibold tracking-widest text-gray-500 uppercase">{member.role}</p>
+        {member.email && (
+          <a
+            href={`mailto:${member.email}`}
+            className="mt-3 block text-xs font-semibold text-blue-600 break-all"
+          >
+            {member.email}
+          </a>
+        )}
       </div>
-      <div className="grid grid-cols-2 border-t border-b border-gray-200/80 text-sm font-semibold text-blue-600">
+      <div className="grid grid-cols-1 border-t border-b border-gray-200/80 text-sm font-semibold text-blue-600">
         <a
           href={member.linkedin}
           target="_blank"
@@ -203,12 +205,6 @@ function ResearchTeamCard({ member }) {
           className="py-4 text-center hover:bg-blue-50 transition-colors"
         >
           LINKEDIN
-        </a>
-        <a
-          href={member.email}
-          className="py-4 text-center hover:bg-blue-50 transition-colors"
-        >
-          G-MAIL
         </a>
       </div>
       <div className="p-5 flex items-start gap-3 text-sm text-gray-600">

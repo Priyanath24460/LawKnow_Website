@@ -1,30 +1,25 @@
-import { MonitorPlay } from 'lucide-react'
 import SectionWrapper from './SectionWrapper'
 
 const presentations = [
   {
     title: 'Project Proposal',
-    date: '2024/07/15',
     type: 'Group',
-    link: '#',
+    link: 'https://drive.google.com/drive/folders/1MDRkaona5FO2nZNH1u1ttMygX41p-0NK?usp=sharing',
   },
   {
     title: 'Progress Review I',
-    date: '2024/12/10',
     type: 'Group',
-    link: '#',
+    link: 'https://drive.google.com/drive/folders/1QuD3tQWUFSIjHyP_4odofy71qFRTbcmj?usp=sharing',
   },
   {
     title: 'Progress Review II',
-    date: '2025/03/20',
     type: 'Group',
-    link: '#',
+    link: 'https://drive.google.com/drive/folders/1Af0mTBb-iUPxlik3oQauBIPI9QXSg5_Q?usp=sharing',
   },
   {
     title: 'Final Viva',
-    date: '2025/05/15',
     type: 'Group',
-    link: '#',
+    link: 'https://drive.google.com/drive/folders/1SgNfm4G0H68h2hNlaZBxtxC-J5aJ0UZ1?usp=sharing',
   },
 ]
 
@@ -79,8 +74,7 @@ export default function Presentations() {
 
             {/* Date & Type + Download */}
             <div>
-              <p className="text-gray-400 text-xs">Submitted on {pres.date}</p>
-              <div className="flex items-center justify-between mt-1">
+              <div className="flex items-center justify-between">
                 <span className="text-gray-500 text-xs">{pres.type}</span>
                 <a
                   href={pres.link}

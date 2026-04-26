@@ -1,48 +1,40 @@
-import { FileText } from 'lucide-react'
 import SectionWrapper from './SectionWrapper'
 
 const documents = [
   {
     title: 'Topic Assessment',
-    date: '2024/01/19',
     type: 'Group',
-    link: 'https://drive.google.com/drive/folders/1uM7hp0TAUFrq-vQOVXaHmWcErwVnEqBe?usp=sharing',
+    link: 'https://drive.google.com/drive/folders/1v6wnglBpKuIxmdk0MDITvNA9QXj7G4v7?usp=sharing',
   },
   {
     title: 'Project Proposal',
-    date: '2024/02/29',
     type: 'Individual',
-    link: '#',
+    link: 'https://drive.google.com/drive/folders/14A6WgJH4OE4B3jkeNg1BE4pH4EwdCTdP?usp=sharing',
   },
   {
     title: 'Status Documents I',
-    date: '2024/05/06',
     type: 'Individual',
-    link: '#',
+    link: 'https://drive.google.com/drive/folders/195ctK-uxksTkh4S0CtJLgV9XAWq1-pAA?usp=sharing',
   },
   {
     title: 'Status Documents II',
-    date: '2024/09/11',
     type: 'Individual',
-    link: '#',
+    link: 'https://drive.google.com/drive/folders/1fX1h2Bg8BhvBmtoKFhfDya836icZAavA?usp=sharing',
   },
   {
     title: 'Research Papers',
-    date: '2024/09/30',
     type: 'Group',
-    link: '#',
+    link: 'https://drive.google.com/drive/folders/1om3uy8bGp4BbuOvtIvN_yd75CcWPZ3c1?usp=sharing',
   },
   {
     title: 'Final Reports',
-    date: '2024/12/01',
     type: 'Group & Individual',
-    link: '#',
+    link: 'https://drive.google.com/drive/folders/1Bv4BsOQW6Bi-s0yzo1JrlfG7TW3OOTYK?usp=sharing',
   },
   {
     title: 'Poster',
-    date: '2024/10/28',
     type: 'Group',
-    link: '#',
+    link: 'https://drive.google.com/drive/folders/1nE5_CV6dxvKO4Ly7_EKFt9RPnfZpLc8w?usp=sharing',
   },
 ]
 
@@ -97,8 +89,7 @@ export default function Documents() {
 
             {/* Date & Type + Download */}
             <div>
-              <p className="text-gray-400 text-xs">Submitted on {doc.date}</p>
-              <div className="flex items-center justify-between mt-1">
+              <div className="flex items-center justify-between">
                 <span className="text-gray-500 text-xs">{doc.type}</span>
                 <a
                   href={doc.link}
