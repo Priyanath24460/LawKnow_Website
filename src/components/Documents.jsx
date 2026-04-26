@@ -6,7 +6,7 @@ const documents = [
     title: 'Topic Assessment',
     date: '2024/01/19',
     type: 'Group',
-    link: '#',
+    link: 'https://drive.google.com/drive/folders/1uM7hp0TAUFrq-vQOVXaHmWcErwVnEqBe?usp=sharing',
   },
   {
     title: 'Project Proposal',

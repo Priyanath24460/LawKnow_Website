@@ -3,67 +3,70 @@ import SectionWrapper from './SectionWrapper'
 import sliitLogo from '../assets/sliitlogo.jpeg'
 import thilinijPhoto from '../assets/thilinij.jpeg'
 import yapaPhoto from '../assets/yapa1.jpg'
-
+import pasindiPhoto from '../assets/pasindi.jpeg'
+import kumodiPhoto from '../assets/kumodi.png'
+import chanugi from '../assets/chanugi.jpeg'
+import sasun from '../assets/sasun.jpeg'
 
 const supervisors = [
   {
-    name: 'Mr. Samadhi Rathnayake',
+    name: 'Mrs. Thilini Jayalath',
     role: 'Supervisor',
     title: 'Senior Lecturer',
     institute: 'Sri Lanka Institute of Information Technology',
     logo: sliitLogo,
     photo: thilinijPhoto,
-    scholar: 'https://scholar.google.com/',
-    email: 'mailto:samadhi.rathnayake@example.com',
+    scholar: 'https://scholar.google.com/citations?user=7xdb5PAAAAAJ&hl=en',
+    email: '',
   },
   {
-    name: 'Mr. Samitha Vidhanaarachchi',
+    name: 'Mr. Kavinga Yapa Abeywardena',
     role: 'Co-Supervisor',
-    title: 'Doctoral Researcher',
-    institute: 'Murdoch University Australia',
+    title: 'Senior Lecturer',
+    institute: 'Sri Lanka Institute of Information Technology',
     logo: sliitLogo,
     photo: yapaPhoto,
-    scholar: 'https://scholar.google.com/',
-    email: 'mailto:samitha.vidhanaarachchi@example.com',
+    scholar: 'https://scholar.google.com/citations?user=BxgvLN4AAAAJ&hl=en',
+    email: '',
   },
 ]
 
 const researchTeam = [
   {
-    name: 'Anusara Weerasooriya',
+    name: 'Pasindi Arjunie',
     role: 'Group Leader',
     degree: 'Undergraduate',
     institute: 'Sri Lanka Institute of Information Technology',
-    photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80',
+    photo: pasindiPhoto,
     linkedin: 'https://www.linkedin.com/in/your-profile',
-    email: 'mailto:anusara.weerasooriya@example.com',
+    email: '',
   },
   {
-    name: 'Dilshi Wanniarachchi',
+    name: 'Sasun Priyanath',
     role: 'Group Member',
     degree: 'Undergraduate',
     institute: 'Sri Lanka Institute of Information Technology',
-    photo: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=80',
+    photo: sasun,
     linkedin: 'https://www.linkedin.com/in/your-profile',
-    email: 'mailto:dilshi.wanniarachchi@example.com',
+    email: '',
   },
   {
-    name: 'Nimesha Priyabandu',
+    name: 'Kumodi Bogahawatte',
     role: 'Group Member',
     degree: 'Undergraduate',
     institute: 'Sri Lanka Institute of Information Technology',
-    photo: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80',
+    photo: kumodiPhoto,
     linkedin: 'https://www.linkedin.com/in/your-profile',
-    email: 'mailto:nimesha.priyabandu@example.com',
+    email: '',
   },
   {
-    name: 'Hiranya Peiris',
+    name: 'Chanugi Wijerathna',
     role: 'Group Member',
     degree: 'Undergraduate',
     institute: 'Sri Lanka Institute of Information Technology',
-    photo: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80',
+    photo: chanugi,
     linkedin: 'https://www.linkedin.com/in/your-profile',
-    email: 'mailto:hiranya.peiris@example.com',
+    email: '',
   },
 ]
 
