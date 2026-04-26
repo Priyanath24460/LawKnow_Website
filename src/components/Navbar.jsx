@@ -17,8 +17,14 @@ const navItems = [
     ],
   },
   { label: 'Milestones', href: '#milestones' },
-  { label: 'Documents', href: '#documents' },
-  { label: 'Slides', href: '#presentations' },
+  {
+    label: 'Resources',
+    href: '#',
+    dropdown: [
+      { label: 'Documents', href: '#documents' },
+      { label: 'Presentations', href: '#presentations' },
+    ],
+  },
   { label: 'About Us', href: '#about' },
   { label: 'Contact Us', href: '#contact' },
 ]

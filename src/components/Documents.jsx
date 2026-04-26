@@ -3,38 +3,44 @@ import SectionWrapper from './SectionWrapper'
 
 const documents = [
   {
-    title: 'Project Charter',
-    date: '2024/02/10',
+    title: 'Topic Assessment',
+    date: '2024/01/19',
     type: 'Group',
     link: '#',
   },
   {
-    title: 'Proposal Document',
+    title: 'Project Proposal',
     date: '2024/02/29',
-    type: 'Group',
-    link: '#',
-  },
-  {
-    title: 'Check List Documents',
-    date: '2024/05/15',
-    type: 'Group',
-    link: '#',
-  },
-  {
-    title: 'Final Document (Main)',
-    date: '2024/11/15',
-    type: 'Group',
-    link: '#',
-  },
-  {
-    title: 'Final Document (Individual)',
-    date: '2024/11/15',
     type: 'Individual',
     link: '#',
   },
   {
-    title: 'Topic Assessment',
-    date: '2024/01/19',
+    title: 'Status Documents I',
+    date: '2024/05/06',
+    type: 'Individual',
+    link: '#',
+  },
+  {
+    title: 'Status Documents II',
+    date: '2024/09/11',
+    type: 'Individual',
+    link: '#',
+  },
+  {
+    title: 'Research Papers',
+    date: '2024/09/30',
+    type: 'Group',
+    link: '#',
+  },
+  {
+    title: 'Final Reports',
+    date: '2024/12/01',
+    type: 'Group & Individual',
+    link: '#',
+  },
+  {
+    title: 'Poster',
+    date: '2024/10/28',
     type: 'Group',
     link: '#',
   },
