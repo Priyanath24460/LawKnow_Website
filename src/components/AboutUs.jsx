@@ -51,7 +51,7 @@ const researchTeam = [
     institute: 'Sri Lanka Institute of Information Technology',
     photo: pasindiPhoto,
     linkedin: 'http://www.linkedin.com/in/pasindi-arjunie-987110235',
-    email: 'it22369024@my.sliit.lk',
+    email: 'pasindiarjunie@gmail.com',
   },
   {
     name: 'Sasun Priyanath',
@@ -60,7 +60,7 @@ const researchTeam = [
     institute: 'Sri Lanka Institute of Information Technology',
     photo: sasun,
     linkedin: 'www.linkedin.com/in/sasun-priyanath-998a23306',
-    email: 'it22002938@my.sliit.lk',
+    email: 'sasunpriyanath05@gmail.com',
   },
   {
     name: 'Kumodi Bogahawatte',
@@ -69,7 +69,7 @@ const researchTeam = [
     institute: 'Sri Lanka Institute of Information Technology',
     photo: kumodiPhoto,
     linkedin: 'https://www.linkedin.com/in/kumodibogahawatte/',
-    email: 'it22053282@my.sliit.lk',
+    email: 'Kumodib@gmail.com',
   },
   {
     name: 'Chanugi Wijerathna',
@@ -78,7 +78,7 @@ const researchTeam = [
     institute: 'Sri Lanka Institute of Information Technology',
     photo: chanugi,
     linkedin: 'http://www.linkedin.com/in/chanugi-wijerathna02',
-    email: 'it22358134@my.sliit.lk',
+    email: 'chanugi.wijerathna@gmail.com',
   },
 ]
 
