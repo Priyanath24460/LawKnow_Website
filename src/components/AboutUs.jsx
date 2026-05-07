@@ -69,7 +69,7 @@ const researchTeam = [
     institute: 'Sri Lanka Institute of Information Technology',
     photo: kumodiPhoto,
     linkedin: 'https://www.linkedin.com/in/kumodibogahawatte/',
-    email: 'Kumodib@gmail.com',
+    email: 'kumodib@gmail.com',
   },
   {
     name: 'Chanugi Wijerathna',
