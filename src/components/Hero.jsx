@@ -63,16 +63,17 @@ export default function Hero() {
           </span>
         </motion.h1>
         
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-          className="text-xl md:text-2xl text-amber-50 mb-12 max-w-3xl mx-auto font-light leading-relaxed"
+          className="text-xl md:text-2xl text-gray-300 max-w-3xl mb-10 leading-relaxed"
+          style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}
         >
-          Empowering the future of legal intelligence through state-of-the-art AI, robust research, and advanced semantics.
+          An AI-Driven Legal Support System Using NLR, SLR and Constitutional Law Automation
         </motion.p>
         
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8, ease: [0.25, 0.1, 0.25, 1] }}

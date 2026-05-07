@@ -77,8 +77,8 @@ export default function Contact() {
           </div>
           {[
             { icon: Mail, label: 'Email', value: contactEmail, href: `mailto:${contactEmail}` },
-            { icon: Phone, label: 'Phone', value: '+94 11 754 4801' },
-            { icon: MapPin, label: 'Address', value: 'SLIIT, New Kandy Road, Malabe, Sri Lanka' },
+            { icon: Phone, label: 'Phone', value: '+94 72 549 2270' },
+            
           ].map(({ icon: Icon, label, value, href }) => (
             <div key={label} className="flex gap-4 items-start">
               <div className="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center flex-shrink-0">
