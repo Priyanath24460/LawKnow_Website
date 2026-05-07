@@ -35,15 +35,13 @@ export default function Contact() {
         EMAILJS_TEMPLATE_ID,
         {
           to_email: contactEmail,
-          from_name: form.name,
-          from_email: form.email,
+          from_name: `${form.name} (${form.email})`, // Shows "Name (email)" in your inbox
           reply_to: form.email,
-          name: form.name,
-          email: form.email,
-          title: form.subject,
-          time: new Date().toLocaleString(),
-          subject: form.subject,
+          name: form.name,      // Matches {{name}} in your template
+          email: form.email,    // Matches {{email}} in your template
+          title: form.subject,  // Matches {{title}} in your template subject
           message: form.message,
+          time: new Date().toLocaleString(),
         },
         { publicKey: EMAILJS_PUBLIC_KEY }
       )

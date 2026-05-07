@@ -12,15 +12,11 @@ const documents = [
     link: 'https://drive.google.com/drive/folders/14A6WgJH4OE4B3jkeNg1BE4pH4EwdCTdP?usp=sharing',
   },
   {
-    title: 'Status Documents I',
-    type: 'Individual',
-    link: 'https://drive.google.com/drive/folders/195ctK-uxksTkh4S0CtJLgV9XAWq1-pAA?usp=sharing',
+    title: 'CheckList Documents',
+    type: 'Group',
+    link: 'https://drive.google.com/drive/folders/1zcRYX9b4_yDDfQXE2JQvx_n8Z-4aOLeI?usp=sharing',
   },
-  {
-    title: 'Status Documents II',
-    type: 'Individual',
-    link: 'https://drive.google.com/drive/folders/1fX1h2Bg8BhvBmtoKFhfDya836icZAavA?usp=sharing',
-  },
+  
   {
     title: 'Research Papers',
     type: 'Group',

@@ -7,6 +7,8 @@ import pasindiPhoto from '../assets/pasindi.jpeg'
 import kumodiPhoto from '../assets/kumodi.png'
 import chanugi from '../assets/chanugi.jpeg'
 import sasun from '../assets/sasun.jpeg'
+import Sandani from '../assets/Sandani.jpeg'
+import sp from '../assets/sp.jpeg'
 
 const supervisors = [
   {
@@ -29,6 +31,16 @@ const supervisors = [
     scholar: 'https://scholar.google.com/citations?user=BxgvLN4AAAAJ&hl=en',
     email: '',
   },
+  {
+    name: 'Sandani Abeywardena',
+    role: 'External-Supervisor',
+    title: 'Attorney-at-Law',
+    institute: 'Supreme Court of Sri Lanka',
+    logo: sp,
+    photo: Sandani,
+    scholar: 'https://scholar.google.com/citations?user=Q6gYWikAAAAJ&hl=en',
+    email: '',
+  }
 ]
 
 const researchTeam = [
@@ -106,7 +118,7 @@ export default function AboutUs() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid md:grid-cols-2 gap-8"
+          className="grid md:grid-cols-3 gap-8"
         >
           {supervisors.map((member, i) => (
             <motion.div key={i} variants={cardVariants} className="w-full max-w-[320px] mx-auto">
